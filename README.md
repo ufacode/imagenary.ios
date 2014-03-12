@@ -1,3 +1,3 @@
 imagenary.ios
 =============
-Mobile client for photo blog platform Imagenary
+Mobile client for photo blog platform [Imagenary] (https://github.com/ufacode/imagenary)
