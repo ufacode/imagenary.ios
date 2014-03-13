@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UploadViewController : UIViewController <UIImagePickerControllerDelegate>
+@interface UploadViewController : UIViewController <UIImagePickerControllerDelegate> 
 @property (strong, nonatomic) IBOutlet UIImageView *uploadImage;
+@property (strong, nonatomic) IBOutlet UITextField *commentField;
 @property (nonatomic, strong) NSMutableData *responseData;
 
 

@@ -15,6 +15,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 
 
-- (IBAction)tab:(id)sender;
+- (IBAction)loginButtonClick:(id)sender;
+
+- (IBAction)cancelButtonClick:(id)sender;
 
 @end

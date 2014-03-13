@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="iRQ-aH-kFk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8YX-ce-x5E">
     <dependencies>
         <deployment defaultVersion="1280" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -9,7 +9,7 @@
         <scene sceneID="2DN-Tf-4MY">
             <objects>
                 <tableViewController storyboardIdentifier="images" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jAn-ig-VVE" customClass="ImageViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="286" sectionHeaderHeight="22" sectionFooterHeight="22" id="4P4-AF-N02">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="286" sectionHeaderHeight="22" sectionFooterHeight="22" id="4P4-AF-N02">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,7 +62,7 @@
         <!--Upload View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
             <objects>
-                <viewController title="Second" id="QUy-BD-bpt" customClass="UploadViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="uploadView" title="Second" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QUy-BD-bpt" customClass="UploadViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gMD-aP-Fq6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,11 +71,11 @@
                                 <rect key="frame" x="55" y="85" width="210" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="center" minimumFontSize="17" id="2Nt-aM-SSy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" id="2Nt-aM-SSy">
                                 <rect key="frame" x="20" y="47" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="twitter"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y2O-kt-RN2">
                                 <rect key="frame" x="110" y="303" width="100" height="30"/>
@@ -92,12 +92,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Upload" id="4wI-FD-voE"/>
                     <connections>
+                        <outlet property="commentField" destination="2Nt-aM-SSy" id="6iA-yB-QEW"/>
                         <outlet property="uploadImage" destination="3RZ-lK-ufx" id="sQJ-LD-Pm0"/>
+                        <segue destination="Gz9-bc-KgW" kind="modal" identifier="showLogin" id="hwo-lg-Y5E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3255" y="-218"/>
+            <point key="canvasLocation" x="3355" y="-586"/>
         </scene>
         <!--View Controller - About project-->
         <scene sceneID="uYm-iK-zqn">
@@ -211,13 +213,13 @@
                                 <rect key="frame" x="-1" y="0.0" width="321" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" id="uAI-Kt-VS7">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" id="uAI-Kt-VS7">
                                         <rect key="frame" x="67" y="208" width="183" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" id="V0o-Ui-utY">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" minimumFontSize="17" clearButtonMode="whileEditing" id="V0o-Ui-utY">
                                         <rect key="frame" x="67" y="246" width="183" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -228,7 +230,15 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Войти"/>
                                         <connections>
-                                            <action selector="tab:" destination="Gz9-bc-KgW" eventType="touchUpInside" id="OK6-lK-wCA"/>
+                                            <action selector="loginButtonClick:" destination="Gz9-bc-KgW" eventType="touchUpInside" id="m6j-qI-9Cy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zjQ-bg-Cc1">
+                                        <rect key="frame" x="69" y="338" width="183" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Отмена"/>
+                                        <connections>
+                                            <action selector="cancelButtonClick:" destination="Gz9-bc-KgW" eventType="touchUpInside" id="1ER-WG-0tS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -244,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOP-RT-sMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="803" y="107"/>
+            <point key="canvasLocation" x="3989" y="-193"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -266,24 +276,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1651" y="-168"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="OmW-ze-ag8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iRQ-aH-kFk" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fth-hE-SqE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Gz9-bc-KgW" kind="relationship" relationship="rootViewController" id="TWi-Nc-Mxo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="69t-p9-qbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="277" y="107"/>
         </scene>
         <!--Navigation Controller - Photos-->
         <scene sceneID="JDL-69-SAj">
@@ -317,7 +309,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="QUy-BD-bpt" kind="relationship" relationship="rootViewController" id="E3P-wa-VX6"/>
+                        <segue destination="QUy-BD-bpt" kind="relationship" relationship="rootViewController" id="t9C-89-E6p"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khj-2i-hPP" userLabel="First Responder" sceneMemberID="firstResponder"/>

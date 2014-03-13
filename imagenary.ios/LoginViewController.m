@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "AFNetworking.h"
+#import "UploadViewController.h"
 
 @interface LoginViewController ()
 
@@ -15,29 +16,19 @@
 
 @implementation LoginViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)tab:(id)sender {
+
+- (IBAction)loginButtonClick:(id)sender {
     NSString *pass = [[NSString alloc] init];
     if (![self.passwordField text]) {
         pass = @"";
@@ -111,9 +102,7 @@
                  NSLog(@"%@", [[NSUserDefaults standardUserDefaults] valueForKey:@"token"]);
                  
                  
-                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                 UITabBarController* viewController = [storyboard instantiateViewControllerWithIdentifier:@"tab"];
-                 [self presentModalViewController:viewController animated:YES];
+                 [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
                  
              } else {
                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info"
@@ -146,6 +135,13 @@
         
         
     }
+    
+}
+
+
+- (IBAction)cancelButtonClick:(id)sender {
+    
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
 }
 

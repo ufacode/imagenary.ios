@@ -12,19 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    if ( 2 > 1 || [[NSUserDefaults standardUserDefaults] objectForKey:@"token"] != nil ) {
-        
-        self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UITabBarController* viewController = [storyboard instantiateViewControllerWithIdentifier:@"tab"];
-        self.window.rootViewController = viewController;
-        [self.window makeKeyAndVisible];
-    
-    }
-
-    
     return YES;
 }
 							
